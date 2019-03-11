@@ -6,12 +6,12 @@ WIDTH = 800
 
 def on_func():
 	print("Status: Active")
-	status.config(text="Status: Active")
-	status.config(fg="green")
+	stati_label.config(text="Active")
+	stati_label.config(fg="#6BF688")
 def off_func():
 	print("Status: Inactive")
-	status.config(text="Status: Inactive")
-	status.config(fg="red")
+	stati_label.config(text="Inactive")
+	stati_label.config(fg="red")
 
 root = tk.Tk()
 root.title("XXX  PEACE KEEPER  XXX")
@@ -38,8 +38,15 @@ on.place(relwidth=0.5,relheight=1)
 off = tk.Button(button_frame,text = " OFF ", bg="#54625B", fg="white",highlightbackground="#54625B",command=lambda:off_func())
 off.place(relx=0.5,relwidth=0.5,relheight=1)
 
-status = tk.Label(root,text="Status: Active ",font=("Courier", 20),bg="#54625B",fg="green")
-status.place(relx=0.7,rely=0.35,relwidth=0.25,relheight=0.1)
+status = tk.Label(root,text=" Status ",font=("Courier", 20),bg="#071F2D",fg="white")
+status.place(relx=0.7,rely=0.2,relwidth=0.25,relheight=0.1)
+
+stati_frame = tk.Frame(root,bg="#091722",bd=5)
+stati_frame.place(relx=0.7,rely=0.3,relwidth=0.25,relheight=0.1)
+
+stati_label = tk.Label(stati_frame,bg="#8D978E",fg="#6BF688",text="Active",font=("Courier", 20))
+stati_label.place(relwidth=1,relheight=1)
+
 
 
 gps_frame = tk.Frame(root,bg="#091722")
@@ -54,13 +61,13 @@ pos.place(relx=0.68,rely=0.55,relwidth=0.3,relheight=0.1)
 lat_frame = tk.Frame(root,bg="#091722",bd=5)
 lat_frame.place(relx=0.68,rely=0.65,relwidth=0.3,relheight=0.1)
 
-lat_label = tk.Label(lat_frame,bg="#7B857B",text="Latitude: ",font=("Courier", 20))
+lat_label = tk.Label(lat_frame,bg="#7B857B",text="Latitude: 78.9080980",font=("Courier", 20))
 lat_label.place(relwidth=1,relheight=1)
 
 lon_frame = tk.Frame(root,bg="#091722",bd=5)
 lon_frame.place(relx=0.68,rely=0.745,relwidth=0.3,relheight=0.1)
 
-lon_label = tk.Label(lon_frame,bg="#7B857B",text="Longitude: ",font=("Courier", 20))
+lon_label = tk.Label(lon_frame,bg="#7B857B",text="Longitude: 67.0989080",font=("Courier", 20))
 lon_label.place(relwidth=1,relheight=1)
 
 root.mainloop()
